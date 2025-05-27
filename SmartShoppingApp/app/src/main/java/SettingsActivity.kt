@@ -24,7 +24,7 @@ class SettingsActivity : AppCompatActivity() {
         btnSaveSettings = findViewById(R.id.btnSaveSettings)
         btnLogout = findViewById(R.id.btnLogout)
 
-        // Load current email to show in edit field (optional)
+       
         val sharedPrefs = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE)
         etNewEmail.setText(sharedPrefs.getString("email", ""))
 
@@ -47,7 +47,7 @@ class SettingsActivity : AppCompatActivity() {
         }
 
         btnLogout.setOnClickListener {
-            // Clear login info and redirect to LoginActivity
+     
             sharedPrefs.edit().clear().apply()
             Toast.makeText(this, "Logged out successfully", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, LoginActivity::class.java)
