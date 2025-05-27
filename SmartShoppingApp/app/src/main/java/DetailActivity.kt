@@ -16,7 +16,7 @@ class DetailActivity : AppCompatActivity() {
         "Toys" to Pair("Fun toys for all ages.", R.drawable.ic_toys)
     )
 
-    // Sample products by category (name and price)
+    // products by category (name and price)
     private val productsByCategory = mapOf(
         "Books" to listOf(
             Product("Book One", 12.99, "A thrilling adventure book."),
@@ -114,5 +114,5 @@ class DetailActivity : AppCompatActivity() {
     }
 }
 
-// Updated Product data class with description
+// Product data class with description
 data class Product(val name: String, val price: Double, val description: String)
