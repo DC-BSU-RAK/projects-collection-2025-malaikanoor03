@@ -17,7 +17,7 @@ class RegisterActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_register)  // make sure this matches your XML filename
+        setContentView(R.layout.activity_register)  
 
         etUsername = findViewById(R.id.etUsername)
         etEmail = findViewById(R.id.etEmail)
@@ -44,18 +44,18 @@ class RegisterActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            // Save user data in SharedPreferences (demo only, not secure for real apps!)
+            // Save user data in SharedPreferences 
             val sharedPrefs = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE)
             with(sharedPrefs.edit()) {
                 putString("username", username)
                 putString("email", email)
-                putString("password", password)  // Never store plain text passwords in real apps!
+                putString("password", password)  
                 apply()
             }
 
             Toast.makeText(this, "Registration successful!", Toast.LENGTH_SHORT).show()
 
-            // Redirect to login screen (you’ll build this next)
+            // Redirect to login screen 
             startActivity(Intent(this, LoginActivity::class.java))
             finish()
         }
